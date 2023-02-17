@@ -1,0 +1,47 @@
+.row-container {
+    background-color: black;
+
+    margin-left: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.row-header {
+    font-weight: bolder;
+    color: white;
+
+    font-size: 1.3em;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.row-cards {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    flex-direction: row;
+
+    width: 100%;
+    gap: 10px;
+}
+
+.row-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card-image {
+    cursor: pointer;
+
+    width: 100%;
+    max-width: 120px;
+
+    transition-duration: 0.3s;
+}
+
+.card-image:hover {
+    transform: scale(1.05);
+}
+
+.card-large {
+    max-width: 155px;
+}

@@ -2,34 +2,40 @@ const API_KEY = 'fac2b2cff0a17ac53f4ba4e8cb64c341'
 
 const categories = [
     {
-        name: 'trending',
+        title: 'trending',
         title: 'Em Alta',
-        path: `/trending/all/week?api_key=${ API_KEY }&language=pt-BR`
+        path: `/trending/all/week?api_key=${ API_KEY }&language=pt-BR`,
+        isLarge: true
     },
     {
-        name: 'topRated',
+        title: 'topRated',
         title: 'Populares',
-        path: `/movie/top_rated?api_key=${ API_KEY }&language=pt-BR`
+        path: `/movie/top_rated?api_key=${ API_KEY }&language=pt-BR`,
+        isLarge: false
     },
     {
-        name: 'originals',
+        title: 'originals',
         title: 'Originais Netflix',
-        path: `/discover/tv?api_key=${ API_KEY }&with_networks=213`
+        path: `/discover/tv?api_key=${ API_KEY }&with_networks=213`,
+        isLarge: false
     },
     {
-        name: 'comedy',
+        title: 'comedy',
         title: 'Comédias',
-        path: `/discover/tv?api_key=${ API_KEY }&with_genres=35`
+        path: `/discover/tv?api_key=${ API_KEY }&with_genres=35`,
+        isLarge: false
     },
     {
-        name: 'documentaries',
+        title: 'documentaries',
         title: 'Documentários',
-        path: `/discover/tv?api_key=${ API_KEY }&with_genres=99`
+        path: `/discover/tv?api_key=${ API_KEY }&with_genres=99`,
+        isLarge: false
     },
     {
-        name: 'romance',
+        title: 'romance',
         title: 'Romances',
-        path: `/discover/tv?api_key=${ API_KEY }&with_genres=1074`
+        path: `/discover/tv?api_key=${ API_KEY }&with_genres=10759`,
+        isLarge: false
     }
 ]
 
@@ -39,7 +45,7 @@ export const getMoviesLists = async ( path ) =>
 {
     try
     {
-        const URL = `https://api.themoviedb.org/3/${ path }`
+        const URL = `https://api.themoviedb.org/3${ path }`
 
         let response = await fetch( URL )
         return await response.json()
