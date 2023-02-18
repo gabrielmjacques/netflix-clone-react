@@ -1,7 +1,6 @@
 .row-container {
     background-color: black;
 
-    margin-left: 10px;
     margin-bottom: 30px;
     padding: 10px;
 }
@@ -11,21 +10,66 @@
     color: white;
 
     font-size: 1.3em;
-    margin-left: 10px;
+    margin-left: 50px;
     margin-bottom: 10px;
+}
+
+.row-main {
+    display: flex;
+    position: relative;
+    overflow-y: hidden;
+
+    width: 100%;
+    gap: 10px;
+}
+
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+
+    width: 50px;
+    z-index: 10;
+    height: 100%;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.row-main:hover .arrow-left,
+.row-main:hover .arrow-right {
+    opacity: 1;
+}
+
+.arrow-left {
+    background-image: linear-gradient(to right, #00000073 50%, transparent);
+
+    left: 0;
+}
+
+.arrow-right {
+    background-image: linear-gradient(to left, #00000073 50%, transparent);
+
+    right: 0;
 }
 
 .row-cards {
     display: flex;
+    position: relative;
     overflow-y: hidden;
     overflow-x: scroll;
     flex-direction: row;
 
     width: 100%;
     gap: 10px;
+    transition-duration: 0.5s;
 }
 
-.row-cards::-webkit-scrollbar {
+.row-cards::-webkit-scrollbar,
+.row-main::-webkit-scrollbar {
     display: none;
 }
 
@@ -33,15 +77,10 @@
     cursor: pointer;
 
     width: 100%;
-    max-width: 120px;
-
-    transition-duration: 0.3s;
+    max-width: 140px;
+    transition-duration: 0.2s;
 }
 
 .card-image:hover {
-    transform: scale(1.05);
-}
-
-.card-large {
-    max-width: 155px;
+    transform: scale(1.03);
 }
